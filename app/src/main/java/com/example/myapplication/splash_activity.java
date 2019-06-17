@@ -31,13 +31,13 @@ public class splash_activity extends Activity {
     private void StartAnimations() {
         Animation anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
         anim.reset();
-        LinearLayout l =(LinearLayout) findViewById(R.id.splash_Layout);
+        LinearLayout l =findViewById(R.id.splash_Layout);
         l.clearAnimation();
         l.startAnimation(anim);
 
         anim = AnimationUtils.loadAnimation(this, R.anim.translate);
         anim.reset();
-        ImageView iv = (ImageView) findViewById(R.id.skyView);
+        ImageView iv =findViewById(R.id.skyView);
         iv.clearAnimation();
         iv.startAnimation(anim);
 
