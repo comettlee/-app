@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         EditText people=findViewById(R.id.People);
         String test=people.getText().toString();
         final String num=test;
+
+        //num , test 데이터 확인 테스트 코드
         System.out.println("people num= "+num+"test"+test);
 
         final int Count[] = new int[9];
@@ -47,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
         setTitle("느리킹 분식");
 
-        Button orderButton;
 
+        Button orderButton;
         orderButton=findViewById(R.id.OrderButton);
 
         orderButton.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("peopleNum",num);
                 startActivity(intent);
 
+                //second_activity 에 데이터 전송후 음식 Count초기화 코드
                 for(int i=0; i<9; i++) {
                     Count[i]=0;
                 }

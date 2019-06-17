@@ -6,17 +6,16 @@
     android:layout_gravity="center"
     android:gravity="center"
     android:background="#33aaff"
-    android:orientation="vertical"
-   >
+    android:orientation="vertical">
 
 
     <ImageView
         android:id="@+id/skyView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/img_cloud"/>
+        android:layout_width="248dp"
+        android:layout_height="203dp"
+        android:background="@drawable/cloud" />
 
-
+<!--스플래시 이미지를 사용할때는 imageView 에 background 로 이미지를 넣어줘야 한다.-->
 
 
 </LinearLayout>
