@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -57,17 +59,31 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent=new Intent(getApplicationContext(),second_activity.class);
-                intent.putExtra("VoteCount",Count);
-                intent.putExtra("ImageName",imgName);
-                intent.putExtra("peopleNum",num);
-                startActivity(intent);
+                if(Count!=null) {
+                    Intent intent = new Intent(getApplicationContext(), second_activity.class);
+                    intent.putExtra("VoteCount", Count);
+                    intent.putExtra("ImageName", imgName);
+                    intent.putExtra("peopleNum", num);
+                    startActivity(intent);
 
-                //second_activity 에 데이터 전송후 음식 Count초기화 코드
-                for(int i=0; i<9; i++) {
-                    Count[i]=0;
+                    //second_activity 에 데이터 전송후 음식 Count초기화 코드
+                    for (int i = 0; i < 9; i++) {
+                        Count[i] = 0;
+                    }
                 }
-            }
+                else{
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                    builder.setTitle("주문 실패");
+                    builder.setMessage("메뉴를 정해주세요..");
+                    builder.setNegativeButton("닫기", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    });
+                    builder.show();
+                }
+                }
         });
 
 
