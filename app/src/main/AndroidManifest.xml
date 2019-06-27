@@ -8,7 +8,8 @@
         android:label="하늘분식"
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        >
 
 
         <activity
